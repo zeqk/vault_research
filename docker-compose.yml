@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  vault:
+    image: vault:1.9.2
+    ports:
+      - 8200:8200
+    environment:
+      - VAULT_DEV_ROOT_TOKEN_ID=123456
+      - VAULT_DEV_LISTEN_ADDRESS=0.0.0.0:8200
+    cap_add:
+      - IPC_LOCK
