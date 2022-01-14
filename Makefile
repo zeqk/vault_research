@@ -36,5 +36,6 @@ vault: ## vault CLI
 		--cap-add IPC_LOCK \
 		-e VAULT_ADDR=$(VAULT_ADDR) \
 		-e VAULT_TOKEN=$(VAULT_TOKEN) \
+		-v $(PWD):/src/ \
 		vault \
 		$(filter-out $@,$(MAKECMDGOALS))
